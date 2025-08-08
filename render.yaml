@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: chat-gpt-demo
+    env: node
+    branch: dev
+    buildCommand: npm install && npm run build
+    startCommand: node dist/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        value: YOUR_MONGODB_URI_HERE
+      - key: OPENAI_API_KEY
+        value: YOUR_OPENAI_API_KEY_HERE
+      - key: BASE_URL
+        value: YOUR_BASE_URL_HERE

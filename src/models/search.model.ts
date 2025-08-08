@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ISearch extends Document {
-  query: string;
+  prompt: string;
   images: string[];
   result: string;
   resImages:string[];
@@ -10,10 +10,10 @@ export interface ISearch extends Document {
 
 const SearchSchema: Schema = new Schema<ISearch>(
   {
-    query: { type: String, required: true },
+    prompt: { type: String, required: true },
     images: [{ type: String }], // Store image paths
     result: { type: String },
-    resImages:[{ type: String }]
+    resImages:[{ type: String }],
   },
   {
     timestamps: { createdAt: true, updatedAt: false },
